@@ -13,13 +13,10 @@ function createTask() {
 
   var cellName = row.insertCell(0);
   cellName.innerHTML = name;
-
   var cellAssignment = row.insertCell(1);
   cellAssignment.innerHTML = assignment;
-
   var cellDate = row.insertCell(2);
   cellDate.innerHTML = date;
-
   var cellDescription = row.insertCell(3);
   cellDescription.innerHTML = description;
 
@@ -40,13 +37,10 @@ function readTask() {
 
     var displayName = document.getElementById("displayName");
     displayName.innerHTML = nameTask;
-
     var displayAssignments = document.getElementById("displayAssignment");
     displayAssignments.innerHTML = assignedTask;
-
     var displayDate = document.getElementById("displayDate");
     displayDate.innerHTML = dateTask;
-
     var displayDescription = document.getElementById("displayDescription");
     displayDescription.innerHTML = descriptionTask;
   } else {
@@ -54,5 +48,8 @@ function readTask() {
     return;
   }
 }
+function updateTask() {
+  var row = document.getElementById("row").value;
+  var table = document.getElementById("tableTasks");
 
-function updateTask() {}
+}
