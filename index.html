@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Task List</title>
+</head>
+
+<body>
+  <h1> Formulario de Tarea</h1>
+  <form id="taskForm">
+    <label for="name">Nombre de la Tarea:</label>
+    <input type="text" name="name" id="name" required>
+    <label for="assignment">Responsable</label>
+    <input type="text" name="assignment" id="assignment" required>
+    <label for="date">Fecha</label>
+    <input type="date" name="date" id="date" required>
+    <label for="description">Descripcion</label>
+    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+    <button type="button" onclick="createTask()">Agregar Tarea</button>
+  </form>
+  <h1> Leer Tarea</h1>
+  <form id="readEdit">
+    <label for="row">Ingrese Fila:</label>
+    <input type="number" id="row" name="row">
+    <button type="button" onclick="readTask()">Leer Tarea</button>
+  </form>
+  <div id="displayName"></div>
+  <div id="displayAssignment"></div>
+  <div id="displayDate"></div>
+  <div id="displayDescription"></div>
+
+  <h1>Lista de Tareas</h1>
+  <table id="tableTasks" border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>Responsable</th>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+    </tr>
+  </table>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
