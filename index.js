@@ -48,8 +48,65 @@ function readTask() {
     return;
   }
 }
+
+//update task
 function updateTask() {
-  var row = document.getElementById("row").value;
+  var row = document.getElementById("rowEdit").value;
   var table = document.getElementById("tableTasks");
 
+  if (row >= 0 && row < table.rows.length) {
+    var rowTable = table.rows[row];
+
+    var nameTask = rowTable.cells[0].innerHTML;
+    var assignedTask = rowTable.cells[1].innerHTML;
+    var dateTask = rowTable.cells[2].innerHTML;
+    var descriptionTask = rowTable.cells[3].innerHTML;
+
+    var displayName = document.getElementById("nameEdit");
+    displayName.value = nameTask;
+    var displayAssignments = document.getElementById("assignmentEdit");
+    displayAssignments.value = assignedTask;
+    var displayDate = document.getElementById("dateEdit");
+    displayDate.value = dateTask;
+    var displayDescription = document.getElementById("descriptionEdit");
+    displayDescription.value = descriptionTask;
+  } else {
+    alert("Fila fuera de Rango");
+    return;
+  }
+}
+
+function modifierTask() {
+  var table = document.getElementById("tableTasks");
+  var row = document.getElementById("rowEdit").value;
+  var rows = table.insertRow(row);
+
+  var nameEdit = document.getElementById("nameEdit").value;
+  var assignmentEdit = document.getElementById("assignmentEdit").value;
+  var dateEdit = document.getElementById("dateEdit").value;
+  var descriptionEdit = document.getElementById("descriptionEdit").value;
+
+  var cellName = rows.insertCell(0);
+  cellName.innerHTML = nameEdit;
+  var cellAssignment = rows.insertCell(1);
+  cellAssignment.innerHTML = assignmentEdit;
+  var cellDate = rows.insertCell(2);
+  cellDate.innerHTML = dateEdit;
+  var cellDescription = rows.insertCell(3);
+  cellDescription.innerHTML = descriptionEdit;
+
+  table.deleteRow(parseInt(row) + 1);
+}
+
+//Delete
+function deleteTask() {
+  var row = document.getElementById("rowDelete").value;
+  var table = document.getElementById("tableTasks");
+
+  if (row === 0 && row < table.rows.length) {
+    table.deleteRow(row);
+  } else {
+    alert("Fila fuera de Rango");
+    return Error;
+  }
 }
