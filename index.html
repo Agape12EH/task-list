@@ -38,9 +38,9 @@
   <form id="editForm">
     <label for="rowEdit">Ingrese Fila:</label>
     <input type="number" id="rowEdit" name="rowEdit">
-    <button type="button" onclick="readTask()">Leer Tarea</button>
-    
-    <label for="nameEdit">Nueva Tarea:</label>
+    <button type="button" onclick="updateTask()">Leer Tarea</button>
+
+    <label for="nameEdit">Nombre de la tarea:</label>
     <input type="text" name="nameEdit" id="nameEdit" required>
     <label for="assignmentEdit">Responsable</label>
     <input type="text" name="assignmentEdit" id="assignmentEdit" required>
@@ -48,9 +48,14 @@
     <input type="date" name="dateEdit" id="dateEdit" required>
     <label for="descriptionEdit">Descripcion</label>
     <textarea name="descriptionEdit" id="descriptionEdit" cols="30" rows="10" required></textarea>
-    <button type="button" onclick="createTask()">Modificar Tarea</button>
+    <button type="button" onclick="modifierTask()">Modificar Tarea</button>
   </form>
 
+  <h1>Eliminar Tarea</h1>
+  <label for="rowDelete">Ingrese Fila a Eliminar:</label>
+  <input type="number" id="rowDelete" name="rowDelete">
+  <button type="button" onclick="deleteTask()">Eliminar Tarea</button>
+  
   <h1>Lista de Tareas</h1>
   <table id="tableTasks" border="1">
     <tr>
